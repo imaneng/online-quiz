@@ -3,6 +3,8 @@ from django.http.response import HttpResponse, JsonResponse
 import random
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render
+
 
 
 def show_question (request):
@@ -90,4 +92,7 @@ def show_score(request):
             return HttpResponse('ok')
         else:
             return HttpResponse("wrong answer")
+
+def test(request):
+    return render("iman")
 
