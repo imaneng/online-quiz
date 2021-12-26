@@ -54,7 +54,10 @@ def show_question (request):
         
         t.append(random.sample(a_z1,4))
         t1.append(random.sample(a_z2,4))
-        return JsonResponse({"status" : "successful" , "data" : (t,t1)})
+        #return JsonResponse({"status" : "successful" , "data" : (t,t1)})
+        context = {'data' : (a_z1)}
+        return render(request, 'index.html', context)
+
     else :
         return JsonResponse ({"status" : "eror" , "mesage" : "faghat GET"}, status = 403)
 
